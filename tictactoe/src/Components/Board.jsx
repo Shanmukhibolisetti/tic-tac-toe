@@ -9,7 +9,7 @@ const Board = () => {
     const [status, setStatus] = useState("active");
     const [winner, setWinner] = useState(null)
     const handleClick = (ind) => {
-        if(state[ind]|| status!="active") {
+        if(state[ind]|| status!=="active") {
             return;
         }
         const currState = [...state];
@@ -72,7 +72,7 @@ const Board = () => {
                     <Element onClick={() => handleClick(8)} value={state[8]}/>
                 </div>
             </div>
-            {status == "win" ? <div className="win">{winner} Won<div/></div> : status == "over" ? <div className="over">Game Over</div> : <div className="turn">{isX ? "X" : "O"} Turn</div>} 
+            {status === "win" ? <div className="win">{winner} Won<div/></div> : status === "over" ? <div className="over">Game Over</div> : <div className="turn">{isX ? "X" : "O"} Turn</div>} 
             <div className="reset"><button className="resetBtn" onClick={resetHandler}>Start Over</button></div>
         </div>
         
